@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>2026 1Q · 최경선</title>
+<title>그로스보드 발표 · 최경선</title>
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 <style>
   :root{
@@ -94,10 +94,12 @@
   .b1 .step .stepno{background:var(--b1);box-shadow:0 0 16px var(--b1-glow)} .b2 .step .stepno{background:var(--b2);box-shadow:0 0 16px var(--b2-glow)} .b3 .step .stepno{background:var(--b3);box-shadow:0 0 16px var(--b3-glow)}
 
   /* ===== media placeholders (이미지/영상 자리) ===== */
-  .media{position:relative;border-radius:16px;overflow:hidden;flex:1;min-height:0;
+  .media{position:relative;border-radius:16px;overflow:hidden;width:100%;aspect-ratio:16/9;
     background:linear-gradient(150deg,rgba(0,89,255,0.14),rgba(8,22,62,0.5));
     border:1.5px dashed rgba(100,150,255,0.4);
     display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:18px}
+  /* 실제 이미지·영상 삽입 시 비율 유지(잘림 허용, 왜곡 없음) */
+  .media img,.media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit}
   .media .ph-ic{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;
     background:rgba(0,89,255,0.18);border:1px solid rgba(120,160,255,0.4);color:#bcd2ff;font-size:24px}
   .media .ph-lab{font-size:14.5px;font-weight:700;color:#cdd9ff}
@@ -109,11 +111,11 @@
   .media.video .play{width:0;height:0;border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #fff;margin-left:4px}
   .media.video{background:linear-gradient(150deg,rgba(0,89,255,0.22),rgba(4,15,45,0.7))}
 
-  .media-grid{display:grid;gap:14px;flex:1;min-height:0}
+  .media-grid{display:grid;gap:14px;width:100%}
   .media-grid.g2{grid-template-columns:1fr 1fr}
 
   /* split layout: text + media */
-  .split{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:28px;width:100%;z-index:2}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:28px;width:100%;align-items:center;z-index:2}
   .split .col{display:flex;flex-direction:column;gap:16px}
 
   /* lesson box */
@@ -189,7 +191,7 @@
   <!-- 1 · TITLE -->
   <section class="slide cover center">
     <div class="eyebrow">2026 1Q</div>
-    <h1 class="title">세 개의 브랜드에서<br/>만든 변화</h1>
+    <h1 class="title">그로스보드 발표</h1>
     <div class="who">
       <span class="chip">발표자 · <b>최경선</b></span>
       <span class="chip">넷폼알앤디</span>
@@ -435,16 +437,30 @@
   <section class="slide">
     <div class="eyebrow">Also Done</div>
     <h2 class="head">메인 성과 외에도, 이런 일들을 챙겼습니다</h2>
-    <div class="grid c2 fill" style="max-width:820px">
-      <div class="card" style="border-top:3px solid var(--b2)">
-        <div class="k" style="color:#5cc2ff">POUR공법</div>
-        <div class="ttl">홈페이지 유지보수</div>
-        <div class="desc">콘텐츠·정보를 최신 상태로 관리해 사이트 신뢰도와 영업 연결성을 유지했습니다.</div>
+    <div class="split" style="max-width:900px;margin-left:auto;margin-right:auto">
+      <div class="col">
+        <div class="media">
+          <span class="ph-tag" style="background:rgba(25,168,255,.25);border-color:rgba(120,200,255,.5)">이미지 자리</span>
+          <div class="ph-ic" style="background:rgba(25,168,255,.18);border-color:rgba(120,200,255,.45)">🖥️</div>
+          <div class="ph-lab">홈페이지 유지보수 화면</div>
+        </div>
+        <div class="card" style="border-top:3px solid var(--b2)">
+          <div class="k" style="color:#5cc2ff">POUR공법</div>
+          <div class="ttl">홈페이지 유지보수</div>
+          <div class="desc">콘텐츠·정보를 최신 상태로 관리해 사이트 신뢰도와 영업 연결성을 유지했습니다.</div>
+        </div>
       </div>
-      <div class="card" style="border-top:3px solid var(--b3)">
-        <div class="k" style="color:#9aa6ff">공통 · 브랜딩</div>
-        <div class="ttl">명함 제작 요청 대응</div>
-        <div class="desc">브랜드 톤에 맞춘 명함 제작을 진행해 대내외 커뮤니케이션 자산을 정비했습니다.</div>
+      <div class="col">
+        <div class="media">
+          <span class="ph-tag" style="background:rgba(113,132,255,.28);border-color:rgba(150,165,255,.5)">이미지 자리</span>
+          <div class="ph-ic" style="background:rgba(113,132,255,.18);border-color:rgba(150,165,255,.45)">💳</div>
+          <div class="ph-lab">명함 시안</div>
+        </div>
+        <div class="card" style="border-top:3px solid var(--b3)">
+          <div class="k" style="color:#9aa6ff">공통 · 브랜딩</div>
+          <div class="ttl">명함 제작 요청 대응</div>
+          <div class="desc">브랜드 톤에 맞춘 명함 제작을 진행해 대내외 커뮤니케이션 자산을 정비했습니다.</div>
+        </div>
       </div>
     </div>
     <div class="pno">13</div>
