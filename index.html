@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>그로스보드 2026 1Q · 최경선</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<style>
+  :root{
+    --bg:#08080f;
+    --bg-soft:#0e0f1c;
+    --card:#14152400;
+    --card-bg:rgba(28,30,52,0.55);
+    --card-border:rgba(255,255,255,0.07);
+    --txt:#f3f4fb;
+    --txt-dim:#a7abc4;
+    --txt-faint:#646a86;
+    /* brand colors */
+    --b1:#6c8cff;   /* 넷폼알앤디 */
+    --b1-soft:rgba(108,140,255,0.16);
+    --b2:#2fd6a6;   /* POUR공법 */
+    --b2-soft:rgba(47,214,166,0.16);
+    --b3:#a78bfa;   /* 아파트스퀘어 */
+    --b3-soft:rgba(167,139,250,0.16);
+    --accent:#8b9bff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#000;font-family:"Pretendard",-apple-system,sans-serif;color:var(--txt);-webkit-font-smoothing:antialiased}
+  body{display:flex;flex-direction:column;align-items:center;gap:28px;padding:40px 16px 120px}
+
+  /* ===== Slide frame ===== */
+  .deck{width:100%;max-width:1180px;display:flex;flex-direction:column;gap:28px}
+  .slide{
+    position:relative;width:100%;aspect-ratio:16/9;border-radius:22px;overflow:hidden;
+    background:
+      radial-gradient(120% 80% at 85% -10%, rgba(108,140,255,0.10), transparent 55%),
+      radial-gradient(90% 70% at -5% 110%, rgba(167,139,250,0.08), transparent 50%),
+      linear-gradient(160deg,#0c0d18 0%, #08080f 60%);
+    border:1px solid rgba(255,255,255,0.06);
+    box-shadow:0 30px 80px -30px rgba(0,0,0,0.8);
+    padding:62px 70px;
+    display:flex;flex-direction:column;
+  }
+  .slide.center{align-items:center;justify-content:center;text-align:center}
+
+  /* page no */
+  .pno{position:absolute;right:30px;bottom:24px;font-size:13px;color:var(--txt-faint);letter-spacing:.04em}
+  .brandbar{position:absolute;left:0;top:0;height:100%;width:5px}
+  .b1 .brandbar{background:linear-gradient(var(--b1),transparent)}
+  .b2 .brandbar{background:linear-gradient(var(--b2),transparent)}
+  .b3 .brandbar{background:linear-gradient(var(--b3),transparent)}
+
+  /* ===== badges & headings ===== */
+  .badge{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:999px;
+    font-size:14px;font-weight:600;letter-spacing:.01em;width:fit-content;
+    background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.09);color:var(--txt-dim)}
+  .badge .dot{width:8px;height:8px;border-radius:50%}
+  .b1 .badge .dot{background:var(--b1)} .b2 .badge .dot{background:var(--b2)} .b3 .badge .dot{background:var(--b3)}
+  .b1 .badge{background:var(--b1-soft);border-color:rgba(108,140,255,.3);color:#c3d0ff}
+  .b2 .badge{background:var(--b2-soft);border-color:rgba(47,214,166,.3);color:#a9f1da}
+  .b3 .badge{background:var(--b3-soft);border-color:rgba(167,139,250,.3);color:#dccdff}
+
+  .eyebrow{font-size:14px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+  h1.title{font-size:50px;font-weight:800;line-height:1.28;letter-spacing:-.02em}
+  h2.head{font-size:36px;font-weight:800;line-height:1.32;letter-spacing:-.02em;margin-top:18px}
+  .sub{font-size:17px;color:var(--txt-dim);line-height:1.6;margin-top:16px;max-width:80%}
+  .sub-en{font-size:14px;color:var(--txt-faint);line-height:1.5;margin-top:8px}
+  .b1 .accentword{color:var(--b1)} .b2 .accentword{color:var(--b2)} .b3 .accentword{color:var(--b3)}
+
+  /* ===== cards ===== */
+  .grid{display:grid;gap:18px;margin-top:auto}
+  .grid.c2{grid-template-columns:1fr 1fr}
+  .grid.c3{grid-template-columns:1fr 1fr 1fr}
+  .card{
+    background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;
+    padding:24px 24px;backdrop-filter:blur(6px);display:flex;flex-direction:column;gap:10px;
+  }
+  .card .k{font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--txt-faint);text-transform:uppercase}
+  .card .ttl{font-size:19px;font-weight:700;color:var(--txt)}
+  .card .desc{font-size:14.5px;line-height:1.6;color:var(--txt-dim)}
+  .card .num{font-size:46px;font-weight:800;letter-spacing:-.02em;line-height:1}
+  .b1 .card .num,.num.b1c{color:var(--b1)} .b2 .card .num,.num.b2c{color:var(--b2)} .b3 .card .num,.num.b3c{color:var(--b3)}
+
+  .step{position:relative;padding-left:0}
+  .step .stepno{font-size:14px;font-weight:800;color:#fff;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:4px}
+  .b1 .step .stepno{background:var(--b1-soft);color:var(--b1);border:1px solid rgba(108,140,255,.35)}
+  .b2 .step .stepno{background:var(--b2-soft);color:var(--b2);border:1px solid rgba(47,214,166,.35)}
+  .b3 .step .stepno{background:var(--b3-soft);color:var(--b3);border:1px solid rgba(167,139,250,.35)}
+
+  /* big stat block */
+  .statrow{display:flex;gap:22px;margin-top:6px}
+  .stat{flex:1;background:var(--card-bg);border:1px solid var(--card-border);border-radius:18px;padding:30px 26px;display:flex;flex-direction:column;gap:10px}
+  .stat .big{font-size:64px;font-weight:800;letter-spacing:-.03em;line-height:.95}
+  .stat .lbl{font-size:15px;color:var(--txt-dim);font-weight:600}
+
+  /* lesson box */
+  .lesson{margin-top:18px;border-radius:16px;padding:22px 26px;border:1px solid rgba(255,255,255,.08);
+    background:linear-gradient(120deg,rgba(255,255,255,.04),rgba(255,255,255,.01));display:flex;gap:18px;align-items:flex-start}
+  .lesson .tag{font-size:12px;font-weight:800;letter-spacing:.08em;padding:6px 12px;border-radius:8px;white-space:nowrap;color:#ffd9a8;background:rgba(255,176,87,.14);border:1px solid rgba(255,176,87,.3)}
+  .lesson .body{font-size:15px;line-height:1.62;color:var(--txt-dim)}
+  .lesson .body b{color:var(--txt)}
+
+  /* question banner slide */
+  .qbanner{width:100%;border-radius:22px;padding:60px;text-align:center;
+    background:linear-gradient(135deg,rgba(108,140,255,.22),rgba(167,139,250,.16));
+    border:1px solid rgba(160,170,255,.25)}
+  .qbanner .qlabel{font-size:14px;font-weight:700;letter-spacing:.2em;color:#c7d0ff;text-transform:uppercase;margin-bottom:22px}
+  .qbanner .qtxt{font-size:34px;font-weight:800;line-height:1.4;letter-spacing:-.02em}
+
+  /* title slide chips */
+  .who{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap;justify-content:center}
+  .chip{padding:9px 18px;border-radius:999px;font-size:15px;color:var(--txt-dim);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+  .chip b{color:#fff;font-weight:700}
+
+  .meta-list{margin-top:14px;display:flex;flex-direction:column;gap:10px}
+  .meta-list .row{display:flex;gap:12px;font-size:15px;color:var(--txt-dim)}
+  .meta-list .row .ic{color:var(--accent);font-weight:800}
+
+  .placeholder{margin-top:auto;border:1.5px dashed rgba(255,255,255,.13);border-radius:14px;
+    height:120px;display:flex;align-items:center;justify-content:center;color:var(--txt-faint);font-size:13.5px;gap:8px}
+
+  /* summary timeline */
+  .toc{display:flex;flex-direction:column;gap:14px;margin-top:24px;width:100%}
+  .toc .item{display:flex;align-items:center;gap:18px;padding:16px 20px;border-radius:14px;background:var(--card-bg);border:1px solid var(--card-border)}
+  .toc .item .n{font-size:13px;font-weight:800;width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff}
+  .toc .item .t{font-size:16px;font-weight:600;flex:1;text-align:left}
+  .toc .item .v{font-size:22px;font-weight:800;letter-spacing:-.02em}
+
+  /* hint */
+  .hint{color:#5a5f7a;font-size:13px;text-align:center;margin-top:8px}
+  ul.clean{list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:6px}
+  ul.clean li{font-size:14.5px;line-height:1.55;color:var(--txt-dim);padding-left:18px;position:relative}
+  ul.clean li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+  @media print{
+    body{padding:0;gap:0;background:#000}
+    .hint{display:none}
+    .slide{border-radius:0;page-break-after:always;box-shadow:none}
+    .deck{gap:0;max-width:none}
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 1 · TITLE -->
+  <section class="slide center">
+    <div class="eyebrow">Growth Board · 2026 1Q</div>
+    <h1 class="title">1분기, 세 개의 브랜드에서<br/><span style="color:var(--accent)">만든 변화</span>를 정리했습니다</h1>
+    <div class="who">
+      <span class="chip">발표자 · <b>최경선</b></span>
+      <span class="chip">넷폼알앤디</span>
+      <span class="chip">POUR공법</span>
+      <span class="chip">아파트스퀘어</span>
+    </div>
+    <div class="sub-en" style="margin-top:30px">왜 했나 · 어떻게 했나 · 무엇이 좋아졌나 · 무엇을 배웠나</div>
+    <div class="pno">01</div>
+  </section>
+
+  <!-- 2 · OVERVIEW -->
+  <section class="slide">
+    <div class="eyebrow">Overview</div>
+    <h2 class="head">1분기 한눈에 — 세 개 브랜드, 세 개의 성과</h2>
+    <p class="sub">각 브랜드에서 맡은 일을 목적 → 과정 → 결과 → 배운 점 흐름으로 정리했습니다. 핵심 성과는 숫자로 먼저 봅니다.</p>
+    <div class="grid c3">
+      <div class="card">
+        <div class="k" style="color:var(--b1)">① 넷폼알앤디</div>
+        <div class="num b1c">32/32</div>
+        <div class="ttl">벡스코 박람회 콘텐츠 완비</div>
+        <div class="desc">공법 영상·부스 영상·드론 촬영까지 사전 마감 100%</div>
+      </div>
+      <div class="card">
+        <div class="k" style="color:var(--b2)">② POUR공법</div>
+        <div class="num b2c">멀티채널</div>
+        <div class="ttl">단가표 발송 체계 정비</div>
+        <div class="desc">카카오·뉴스레터 동기화 + AI드론 단가표 신규</div>
+      </div>
+      <div class="card">
+        <div class="k" style="color:var(--b3)">③ 아파트스퀘어</div>
+        <div class="num b3c">3/3</div>
+        <div class="ttl">신규 브랜드 자산 0→1</div>
+        <div class="desc">Acquisition 유입 채널 단기 가동 완료</div>
+      </div>
+    </div>
+    <div class="pno">02</div>
+  </section>
+
+  <!-- 3 · 넷폼 WHAT/WHY -->
+  <section class="slide b1">
+    <div class="brandbar"></div>
+    <div class="badge"><span class="dot"></span>성과 ① 넷폼알앤디 · 벡스코 박람회 콘텐츠</div>
+    <h2 class="head">패널 전시만으로는 부족했던<br/><span class="accentword">공법의 차별점</span>을, 영상으로 풀었습니다</h2>
+    <div class="grid c2">
+      <div class="card">
+        <div class="k">WHAT · 무엇을</div>
+        <div class="ttl">총 32건의 박람회 콘텐츠</div>
+        <div class="desc">공법 영상 11종(아스팔트싱글·금속기와·슬라브·재도장·에폭시·아스콘·보도블럭·외벽드론 AI 등) + 부스 위치별 영상 + 드론 촬영 지원</div>
+      </div>
+      <div class="card">
+        <div class="k">WHY · 왜</div>
+        <div class="ttl">체류 시간 = 박람회의 성패</div>
+        <div class="desc">방문객을 부스에 붙잡아 두는 것이 관건. 정적인 패널 전시만으로는 공법별 차별점을 직관적으로 전달하기 어려웠습니다.</div>
+      </div>
+    </div>
+    <div class="pno">03</div>
+  </section>
+
+  <!-- 4 · 넷폼 HOW -->
+  <section class="slide b1">
+    <div class="brandbar"></div>
+    <div class="badge"><span class="dot"></span>성과 ① 넷폼알앤디 · HOW</div>
+    <h2 class="head">어떻게 했나 — 3단계로 분리·재가공</h2>
+    <div class="grid c3">
+      <div class="card step">
+        <div class="stepno">1</div>
+        <div class="ttl">영상 분리 → 재가공</div>
+        <div class="desc">공법 7종을 짧은 영상으로 분리한 뒤, 큰 화면용·모서리용으로 각각 재가공해 부스 환경에 맞췄습니다.</div>
+      </div>
+      <div class="card step">
+        <div class="stepno">2</div>
+        <div class="ttl">기술력 별도 트랙</div>
+        <div class="desc">드론·AI 외벽 진단 영상을 별도 트랙으로 구성해, 첨단 기술력을 집중적으로 어필했습니다.</div>
+      </div>
+      <div class="card step">
+        <div class="stepno">3</div>
+        <div class="ttl">출품 DB 사전 정리</div>
+        <div class="desc">출품 목록을 미리 DB화해, 상담 현장에서 즉시 이력을 확인할 수 있게 준비했습니다.</div>
+      </div>
+    </div>
+    <div class="pno">04</div>
+  </section>
+
+  <!-- 5 · 넷폼 RESULT + LESSON -->
+  <section class="slide b1">
+    <div class="brandbar"></div>
+    <div class="badge"><span class="dot"></span>성과 ① 넷폼알앤디 · 결과 &amp; 회고</div>
+    <h2 class="head">박람회 사전 마감 100%, 그리고 자산으로 재활용</h2>
+    <div class="statrow">
+      <div class="stat"><div class="big b1c">32/32</div><div class="lbl">콘텐츠 제작 완료 건수</div></div>
+      <div class="stat"><div class="big b1c">100%</div><div class="lbl">박람회 사전 마감 달성</div></div>
+      <div class="stat"><div class="big b1c">재활용</div><div class="lbl">종료 후 유튜브·홈페이지 → ROI 확장</div></div>
+    </div>
+    <div class="lesson">
+      <span class="tag">시행착오 → 교훈</span>
+      <div class="body">자막을 1분 원본에 그대로 입혔더니 너무 빨라, 드론 스캔 과정이 이해되지 않았습니다.
+        <b>자막은 '텍스트 얹기'가 아니라 '영상 재기획'</b> — 다 읽을 수 있는 길이인지 먼저 산정해야 한다는 걸 배웠습니다.</div>
+    </div>
+    <div class="pno">05</div>
+  </section>
+
+  <!-- 6 · POUR WHAT/WHY -->
+  <section class="slide b2">
+    <div class="brandbar"></div>
+    <div class="badge"><span class="dot"></span>성과 ② POUR공법 · 단가표 발송 체계</div>
+    <h2 class="head">흩어진 발송 채널을 모아<br/><span class="accentword">영업이 바로 쓰는 도구</span>로 만들었습니다</h2>
+    <div class="grid c2">
+      <div class="card">
+        <div class="k">WHAT · 무엇을</div>
+        <div class="ttl">단가표 발송 체계 정비</div>
+        <div class="desc">카카오·뉴스레터에 동일 단가표를 동시 발송하고, AI드론 단가표를 신규로 추가해 시공사가 즉시 활용 가능한 체계를 만들었습니다.</div>
+      </div>
+      <div class="card">
+        <div class="k">WHY · 왜</div>
+        <div class="ttl">채널 분산 + 신규 자산 미반영</div>
+        <div class="desc">발송 채널이 분산돼 도달에 격차가 있었고, AI드론 같은 신규 자산이 발송 채널에 반영되지 못한 상태였습니다.</div>
+      </div>
+    </div>
+    <div class="pno">06</div>
+  </section>
+
+  <!-- 7 · POUR HOW -->
+  <section class="slide b2">
+    <div class="brandbar"></div>
+    <div class="badge"><span class="dot"></span>성과 ② POUR공법 · HOW</div>
+    <h2 class="head">어떻게 했나 — 동기화·신규·인계</h2>
+    <div class="grid c3">
+      <div class="card step">
+        <div class="stepno">1</div>
+        <div class="ttl">채널 동기화</div>
+        <div class="desc">카카오·뉴스레터에 동일 단가표를 동시 발송해, 채널별 도달 격차를 해소했습니다.</div>
+      </div>
+      <div class="card step">
+        <div class="stepno">2</div>
+        <div class="ttl">AI드론 단가표 신규</div>
+        <div class="desc">신규 기술 자산인 AI드론 단가표를 추가해, 발송 채널에서 기술력을 어필했습니다.</div>
+      </div>
+      <div class="card step">
+        <div class="stepno">3</div>
+        <div class="ttl">톤 유지 인계</div>
+        <div class="desc">기존 토픽방 레퍼런스를 확인해 톤을 유지하고, 시공사가 즉시 활용하는 형태로 인계했습니다.</div>
+      </div>
+    </div>
+    <div class="pno">07</div>
+  </section>
+
+  <!-- 8 · POUR RESULT + LESSON -->
+  <section class="slide b2">
+    <div class="brandbar"></div>
+    <div class="badge"><span class="dot"></span>성과 ② POUR공법 · 결과 &amp; 회고</div>
+    <h2 class="head">멀티채널 동기화 안정화, 단가표가 영업 도구가 되다</h2>
+    <div class="statrow">
+      <div class="stat"><div class="big b2c">동기화</div><div class="lbl">카카오·뉴스레터 멀티채널 안정화</div></div>
+      <div class="stat"><div class="big b2c">신규</div><div class="lbl">AI드론 단가표 발송 체계 편입</div></div>
+      <div class="stat"><div class="big b2c">영업 도구화</div><div class="lbl">시공사 즉시 활용 형태로 인계</div></div>
+    </div>
+    <div class="lesson">
+      <span class="tag">시행착오 → 교훈</span>
+      <div class="body">처음엔 '제품 라인업' 워딩으로 만들었더니, 시공사에겐 추상적이라 즉시 활용이 어려웠습니다.
+        <b>자료 워딩은 발신자(마케팅)가 아니라 수신자(시공사)의 언어로</b> — '단가표'가 현장에서 바로 쓰는 도구 언어였습니다.</div>
+    </div>
+    <div class="pno">08</div>
+  </section>
+
+  <!-- 9 · 아파트스퀘어 WHAT/WHY -->
+  <section class="slide b3">
+    <div class="brandbar"></div>
+    <div class="badge"><span class="dot"></span>성과 ③ 아파트스퀘어 · 신규 브랜드 0→1</div>
+    <h2 class="head">아무것도 없던 신규 브랜드에서<br/><span class="accentword">인식 전환</span>의 첫 자산을 만들었습니다</h2>
+    <div class="grid c2">
+      <div class="card">
+        <div class="k">WHAT · 무엇을</div>
+        <div class="ttl">브랜드 자산 0→1 구축 시작</div>
+        <div class="desc">필드아이덴티티 조끼 제작·주문 / 드론 AI 하자진단 유튜브 / 카페 포스팅 2건 / 홈페이지 AI드론 제안서 삽입 / 톤앤매너·AARRR 자료조사</div>
+      </div>
+      <div class="card">
+        <div class="k">WHY · 왜</div>
+        <div class="ttl">식별·메시지·디지털 모두 부재</div>
+        <div class="desc">0에서 시작하는 신규 브랜드라 현장 식별 도구·메시지 체계·디지털 자산이 모두 없는 상태에서 인식 전환을 만들어야 했습니다.</div>
+      </div>
+    </div>
+    <div class="pno">09</div>
+  </section>
+
+  <!-- 10 · 아파트스퀘어 HOW -->
+  <section class="slide b3">
+    <div class="brandbar"></div>
+    <div class="badge"><span class="dot"></span>성과 ③ 아파트스퀘어 · HOW</div>
+    <h2 class="head">어떻게 했나 — 식별 먼저, 그다음 유입</h2>
+    <div class="grid c3">
+      <div class="card step">
+        <div class="stepno">1</div>
+        <div class="ttl">필드아이덴티티 우선</div>
+        <div class="desc">현장에서 '전문감리기관'으로 즉시 식별되는 조끼를 가장 먼저 완료했습니다.</div>
+      </div>
+      <div class="card step">
+        <div class="stepno">2</div>
+        <div class="ttl">톤앤매너 자료조사</div>
+        <div class="desc">AARRR 퍼널 기반으로 톤앤매너 자료조사를 선행해, 회의·리플렛의 토대를 만들었습니다.</div>
+      </div>
+      <div class="card step">
+        <div class="stepno">3</div>
+        <div class="ttl">Acquisition 가동</div>
+        <div class="desc">드론 AI 영상 + 카페 포스팅으로 유입 채널을 분리 운영해 즉시 가동했습니다.</div>
+      </div>
+    </div>
+    <div class="pno">10</div>
+  </section>
+
+  <!-- 11 · 아파트스퀘어 RESULT + LESSON -->
+  <section class="slide b3">
+    <div class="brandbar"></div>
+    <div class="badge"><span class="dot"></span>성과 ③ 아파트스퀘어 · 결과 &amp; 회고</div>
+    <h2 class="head">신규 브랜드인데도 유입 채널을 단기에 가동</h2>
+    <div class="statrow">
+      <div class="stat"><div class="big b3c">3/3</div><div class="lbl">Acquisition 트랙 가동 (100%)</div></div>
+      <div class="stat"><div class="big b3c">0→1</div><div class="lbl">현장 식별 도구 선완료</div></div>
+      <div class="stat"><div class="big b3c">진행</div><div class="lbl">브랜딩 자산 골격 구축 단계</div></div>
+    </div>
+    <div class="lesson">
+      <span class="tag">시행착오 → 교훈</span>
+      <div class="body">페르소나가 명확해지기 전에 자료조사·포스팅·콘텐츠를 먼저 진행해, 일부 콘텐츠를 재검토해야 했습니다.
+        <b>신규 브랜드는 '빠른 자산 구축'보다 '누구를 위한 자산인지' 정의가 먼저</b> — 페르소나 정의 1주가 콘텐츠 재작업 3주를 막습니다.</div>
+    </div>
+    <div class="pno">11</div>
+  </section>
+
+  <!-- 12 · QUESTION / 종합 임팩트 -->
+  <section class="slide center">
+    <div class="qbanner">
+      <div class="qlabel">Total Impact</div>
+      <div class="qtxt">세 브랜드 모두 — 흩어진 것을 모으고,<br/>없던 것을 0에서 만들어 가동시켰습니다</div>
+    </div>
+    <div class="statrow" style="margin-top:30px;width:100%">
+      <div class="stat" style="text-align:center"><div class="big b1c">32/32</div><div class="lbl">넷폼알앤디 콘텐츠 완비</div></div>
+      <div class="stat" style="text-align:center"><div class="big b2c">멀티채널</div><div class="lbl">POUR 단가표 영업 도구화</div></div>
+      <div class="stat" style="text-align:center"><div class="big b3c">3/3</div><div class="lbl">아파트스퀘어 유입 가동</div></div>
+    </div>
+    <div class="pno">12</div>
+  </section>
+
+  <!-- 13 · 배운 것 + 향후 -->
+  <section class="slide">
+    <div class="eyebrow">Lessons &amp; Next</div>
+    <h2 class="head">1분기에 배운 것 3줄, 그리고 다음 분기</h2>
+    <div class="grid c3" style="margin-top:30px">
+      <div class="card">
+        <div class="k" style="color:var(--b1)">교훈 ①</div>
+        <div class="ttl">길이를 먼저 산정한다</div>
+        <div class="desc">자막·콘텐츠는 '얹기'가 아니라 '재기획'. 수신자가 다 소화할 수 있는지부터 본다.</div>
+      </div>
+      <div class="card">
+        <div class="k" style="color:var(--b2)">교훈 ②</div>
+        <div class="ttl">수신자의 언어로 쓴다</div>
+        <div class="desc">자료 워딩은 마케팅이 아니라 현장이 바로 쓰는 도구 언어여야 한다.</div>
+      </div>
+      <div class="card">
+        <div class="k" style="color:var(--b3)">교훈 ③</div>
+        <div class="ttl">정의가 제작보다 먼저</div>
+        <div class="desc">신규 브랜드는 '누구를 위한 자산인가'를 정의한 뒤 만들어야 재작업이 줄어든다.</div>
+      </div>
+    </div>
+    <ul class="clean" style="margin-top:26px">
+      <li>아파트스퀘어 — 페르소나·톤앤매너 정의를 마무리하고 콘텐츠 트랙을 본격화</li>
+      <li>POUR공법 — 멀티채널 발송 체계를 자동화·정례화해 영업 리드타임 단축</li>
+      <li>넷폼알앤디 — 박람회 자산을 유튜브·홈페이지 상시 콘텐츠로 재편집해 ROI 확장</li>
+    </ul>
+    <div class="pno">13</div>
+  </section>
+
+  <!-- 14 · THANKS -->
+  <section class="slide center">
+    <div class="eyebrow">Thank you</div>
+    <h1 class="title">감사합니다</h1>
+    <p class="sub" style="max-width:none;text-align:center">목적 · 과정 · 결과 · 배운 점 — 1분기의 기록이었습니다.<br/>질문 환영합니다. <span style="color:var(--accent)">Q &amp; A</span></p>
+    <div class="who"><span class="chip">최경선 · 2026 1Q Growth Board</span></div>
+    <div class="pno">14</div>
+  </section>
+
+</div>
+<p class="hint">↑↓ / 클릭으로 슬라이드 이동 · 인쇄(⌘P)하면 16:9 PDF로 저장됩니다</p>
+
+<script>
+  // 클릭 시 다음 슬라이드로 부드럽게 스크롤
+  const slides=[...document.querySelectorAll('.slide')];
+  let idx=0;
+  function go(n){idx=Math.max(0,Math.min(slides.length-1,n));slides[idx].scrollIntoView({behavior:'smooth',block:'center'});}
+  document.addEventListener('keydown',e=>{
+    if(['ArrowDown','ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(idx+1);}
+    if(['ArrowUp','ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(idx-1);}
+  });
+  // 현재 화면에 보이는 슬라이드 인덱스 추적
+  const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)idx=slides.indexOf(en.target);});},{threshold:.6});
+  slides.forEach(s=>io.observe(s));
+</script>
+</body>
+</html>
