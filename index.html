@@ -71,6 +71,9 @@
   .grid{display:grid;gap:18px;margin-top:auto;z-index:2}
   .grid.c2{grid-template-columns:1fr 1fr}
   .grid.c3{grid-template-columns:1fr 1fr 1fr}
+  /* 내용이 적은 슬라이드: 카드가 세로 공간을 채우고 내용은 중앙 정렬 */
+  .grid.fill{margin-top:32px;flex:1;min-height:0}
+  .grid.fill .card{justify-content:center}
   .card{
     background:var(--glass);border:1px solid var(--gborder);border-radius:18px;
     padding:24px;display:flex;flex-direction:column;gap:10px;backdrop-filter:blur(10px);
@@ -84,9 +87,9 @@
   .card.res .check{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#fff;box-shadow:0 0 18px var(--b1-glow)}
   .b1 .card.res .check{background:var(--b1);box-shadow:0 0 18px var(--b1-glow)} .b2 .card.res .check{background:var(--b2);box-shadow:0 0 18px var(--b2-glow)} .b3 .card.res .check{background:var(--b3);box-shadow:0 0 18px var(--b3-glow)}
 
-  /* HOW 슬라이드: 카드를 세로 중앙에 두고 위아래 여백 균형 */
-  .grid.steps{margin-top:auto;margin-bottom:auto}
-  .grid.steps .card{justify-content:flex-start;gap:14px;padding:32px 28px}
+  /* HOW 슬라이드: 카드가 세로 공간을 채우고 내용 중앙 정렬 */
+  .grid.steps{margin-top:32px;flex:1;min-height:0}
+  .grid.steps .card{justify-content:center;gap:14px;padding:32px 28px}
   .step .stepno{font-size:14px;font-weight:900;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:4px;color:#fff}
   .b1 .step .stepno{background:var(--b1);box-shadow:0 0 16px var(--b1-glow)} .b2 .step .stepno{background:var(--b2);box-shadow:0 0 16px var(--b2-glow)} .b3 .step .stepno{background:var(--b3);box-shadow:0 0 16px var(--b3-glow)}
 
@@ -110,8 +113,9 @@
   .media-grid.g2{grid-template-columns:1fr 1fr}
 
   /* split layout: text + media */
-  .split{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:auto;flex:1;min-height:0;z-index:2}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px;flex:1;min-height:0;z-index:2}
   .split .col{display:flex;flex-direction:column;gap:16px;min-height:0}
+  .split .col .card{flex:1 1 0;min-height:0;justify-content:center}
 
   /* lesson box */
   .lesson{margin-top:16px;border-radius:16px;padding:20px 24px;z-index:2;
@@ -202,7 +206,7 @@
     <div class="eyebrow">Overview</div>
     <h2 class="head">1분기 한눈에 — 세 개 브랜드, 세 개의 성과</h2>
     <p class="sub">각 브랜드에서 맡은 일을 목적 → 과정 → 결과 → 배운 점 흐름으로 정리했습니다.</p>
-    <div class="grid c3">
+    <div class="grid c3 fill">
       <div class="card" style="border-top:3px solid var(--b1)">
         <div class="k">① 넷폼알앤디</div>
         <div class="ttl">벡스코 박람회 콘텐츠 완비</div>
@@ -432,7 +436,7 @@
   <section class="slide">
     <div class="eyebrow">Lessons &amp; Next</div>
     <h2 class="head">1분기에 배운 것 3줄, 그리고 다음 분기</h2>
-    <div class="grid c3" style="margin-top:28px">
+    <div class="grid c3 fill">
       <div class="card" style="border-top:3px solid var(--b1)"><div class="k">교훈 ①</div><div class="ttl">길이를 먼저 산정한다</div><div class="desc">자막·콘텐츠는 '얹기'가 아니라 '재기획'. 수신자가 다 소화할 수 있는지부터 본다.</div></div>
       <div class="card" style="border-top:3px solid var(--b2)"><div class="k" style="color:#5cc2ff">교훈 ②</div><div class="ttl">수신자의 언어로 쓴다</div><div class="desc">자료 워딩은 마케팅이 아니라 현장이 바로 쓰는 도구 언어여야 한다.</div></div>
       <div class="card" style="border-top:3px solid var(--b3)"><div class="k" style="color:#9aa6ff">교훈 ③</div><div class="ttl">정의가 제작보다 먼저</div><div class="desc">신규 브랜드는 '누구를 위한 자산인가'를 정의한 뒤 만들어야 재작업이 줄어든다.</div></div>
