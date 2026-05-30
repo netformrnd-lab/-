@@ -147,6 +147,13 @@
   .impact .ico{width:42px;height:42px;border-radius:12px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff}
   .impact .big{font-size:21px;font-weight:800}
   .impact .lbl{font-size:14px;color:var(--txt-dim);font-weight:600;margin-top:8px;line-height:1.5}
+  /* 0 → N 메트릭 */
+  .impact .metric{margin-top:16px;padding-top:16px;border-top:1px solid rgba(120,160,255,0.18);display:flex;align-items:baseline;justify-content:center;gap:8px}
+  .impact .metric .from{font-size:22px;font-weight:800;color:var(--txt-faint)}
+  .impact .metric .arr{font-size:16px;color:var(--txt-faint)}
+  .impact .metric .to{font-size:34px;font-weight:800;letter-spacing:-.02em}
+  .impact .metric .unit{font-size:13px;font-weight:700;color:var(--txt-dim);margin-left:2px}
+  .impact .mlbl{font-size:12px;color:var(--txt-faint);margin-top:6px}
 
   /* ===== nav UI ===== */
   .nav-arrow{position:fixed;top:50%;transform:translateY(-50%);z-index:30;width:52px;height:52px;border-radius:50%;
@@ -426,9 +433,15 @@
       <div class="qtxt">박람회 콘텐츠는 완비하고, 발송 체계는 정비하고,<br/>신규 브랜드 자산은 새로 만들었습니다</div>
     </div>
     <div class="impactrow">
-      <div class="impact"><div class="ico" style="background:var(--b1);box-shadow:0 0 18px var(--b1-glow)">①</div><div class="big">넷폼알앤디</div><div class="lbl">박람회 콘텐츠 완비<br/>→ 자산 재활용</div></div>
-      <div class="impact"><div class="ico" style="background:var(--b2);box-shadow:0 0 18px var(--b2-glow)">②</div><div class="big">POUR공법</div><div class="lbl">단가표 발송 체계<br/>→ 영업 도구화</div></div>
-      <div class="impact"><div class="ico" style="background:var(--b3);box-shadow:0 0 18px var(--b3-glow)">③</div><div class="big">아파트스퀘어</div><div class="lbl">신규 브랜드 자산<br/>→ 유입 채널 가동</div></div>
+      <div class="impact"><div class="ico" style="background:var(--b1);box-shadow:0 0 18px var(--b1-glow)">①</div><div class="big">넷폼알앤디</div><div class="lbl">박람회 콘텐츠 완비<br/>→ 자산 재활용</div>
+        <div class="metric"><span class="from">0</span><span class="arr">→</span><span class="to" style="color:#4d86ff">[N]</span><span class="unit">건</span></div>
+        <div class="mlbl">제작·게시한 영상 콘텐츠</div></div>
+      <div class="impact"><div class="ico" style="background:var(--b2);box-shadow:0 0 18px var(--b2-glow)">②</div><div class="big">POUR공법</div><div class="lbl">단가표 발송 체계<br/>→ 영업 도구화</div>
+        <div class="metric"><span class="from">0</span><span class="arr">→</span><span class="to" style="color:#5cc2ff">[N]</span><span class="unit">채널</span></div>
+        <div class="mlbl">단가표 정기 발송 채널</div></div>
+      <div class="impact"><div class="ico" style="background:var(--b3);box-shadow:0 0 18px var(--b3-glow)">③</div><div class="big">아파트스퀘어</div><div class="lbl">신규 브랜드 자산<br/>→ 유입 채널 가동</div>
+        <div class="metric"><span class="from">0</span><span class="arr">→</span><span class="to" style="color:#9aa6ff">[N]</span><span class="unit">채널</span></div>
+        <div class="mlbl">신규 가동한 유입 채널</div></div>
     </div>
     <div class="pno">12</div>
   </section>
