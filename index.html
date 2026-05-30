@@ -71,9 +71,8 @@
   .grid{display:grid;gap:18px;margin-top:auto;z-index:2}
   .grid.c2{grid-template-columns:1fr 1fr}
   .grid.c3{grid-template-columns:1fr 1fr 1fr}
-  /* 내용이 적은 슬라이드: 카드가 세로 공간을 채우고 내용은 중앙 정렬 */
-  .grid.fill{margin-top:32px;flex:1;min-height:0}
-  .grid.fill .card{justify-content:center}
+  /* 내용이 적은 슬라이드: 제목 아래 적당한 간격, 자연스러운 카드 높이 + 하단 여백 */
+  .grid.fill{margin-top:30px}
   .card{
     background:var(--glass);border:1px solid var(--gborder);border-radius:18px;
     padding:24px;display:flex;flex-direction:column;gap:10px;backdrop-filter:blur(10px);
@@ -87,9 +86,9 @@
   .card.res .check{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#fff;box-shadow:0 0 18px var(--b1-glow)}
   .b1 .card.res .check{background:var(--b1);box-shadow:0 0 18px var(--b1-glow)} .b2 .card.res .check{background:var(--b2);box-shadow:0 0 18px var(--b2-glow)} .b3 .card.res .check{background:var(--b3);box-shadow:0 0 18px var(--b3-glow)}
 
-  /* HOW 슬라이드: 카드가 세로 공간을 채우고 내용 중앙 정렬 */
-  .grid.steps{margin-top:32px;flex:1;min-height:0}
-  .grid.steps .card{justify-content:center;gap:14px;padding:32px 28px}
+  /* HOW 슬라이드 */
+  .grid.steps{margin-top:30px}
+  .grid.steps .card{gap:14px;padding:28px 26px}
   .step .stepno{font-size:14px;font-weight:900;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:4px;color:#fff}
   .b1 .step .stepno{background:var(--b1);box-shadow:0 0 16px var(--b1-glow)} .b2 .step .stepno{background:var(--b2);box-shadow:0 0 16px var(--b2-glow)} .b3 .step .stepno{background:var(--b3);box-shadow:0 0 16px var(--b3-glow)}
 
@@ -113,9 +112,8 @@
   .media-grid.g2{grid-template-columns:1fr 1fr}
 
   /* split layout: text + media */
-  .split{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px;flex:1;min-height:0;z-index:2}
-  .split .col{display:flex;flex-direction:column;gap:16px;min-height:0}
-  .split .col .card{flex:1 1 0;min-height:0;justify-content:center}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:28px;z-index:2}
+  .split .col{display:flex;flex-direction:column;gap:16px}
 
   /* lesson box */
   .lesson{margin-top:16px;border-radius:16px;padding:20px 24px;z-index:2;
@@ -432,7 +430,31 @@
     <div class="pno">12</div>
   </section>
 
-  <!-- 13 · 배운 것 + 향후 -->
+  <!-- 13 · 그 외 진행 업무 -->
+  <section class="slide">
+    <div class="eyebrow">Also Done</div>
+    <h2 class="head">메인 성과 외에도, 이런 일들을 챙겼습니다</h2>
+    <div class="grid c3 fill">
+      <div class="card" style="border-top:3px solid var(--b1)">
+        <div class="k">넷폼알앤디</div>
+        <div class="ttl">베트남 홍보영상 제작</div>
+        <div class="desc">해외(베트남) 시장을 겨냥한 홍보영상을 제작해 글로벌 확장의 첫 자료를 마련했습니다.</div>
+      </div>
+      <div class="card" style="border-top:3px solid var(--b2)">
+        <div class="k" style="color:#5cc2ff">POUR공법</div>
+        <div class="ttl">홈페이지 유지보수</div>
+        <div class="desc">콘텐츠·정보를 최신 상태로 관리해 사이트 신뢰도와 영업 연결성을 유지했습니다.</div>
+      </div>
+      <div class="card" style="border-top:3px solid var(--b3)">
+        <div class="k" style="color:#9aa6ff">공통 · 브랜딩</div>
+        <div class="ttl">명함 제작 요청 대응</div>
+        <div class="desc">브랜드 톤에 맞춘 명함 제작을 진행해 대내외 커뮤니케이션 자산을 정비했습니다.</div>
+      </div>
+    </div>
+    <div class="pno">13</div>
+  </section>
+
+  <!-- 14 · 배운 것 + 향후 -->
   <section class="slide">
     <div class="eyebrow">Lessons &amp; Next</div>
     <h2 class="head">1분기에 배운 것 3줄, 그리고 다음 분기</h2>
@@ -446,7 +468,7 @@
       <li>POUR공법 — 멀티채널 발송 체계를 자동화·정례화해 영업 리드타임 단축</li>
       <li>넷폼알앤디 — 박람회 자산을 유튜브·홈페이지 상시 콘텐츠로 재편집</li>
     </ul>
-    <div class="pno">13</div>
+    <div class="pno">14</div>
   </section>
 
   <!-- 14 · THANKS -->
@@ -455,7 +477,7 @@
     <h1 class="title">감사합니다</h1>
     <p class="sub" style="max-width:none;text-align:center">목적 · 과정 · 결과 · 배운 점 — 1분기의 기록이었습니다.<br/>질문 환영합니다. <span style="color:#fff;font-weight:800">Q &amp; A</span></p>
     <div class="who"><span class="chip">최경선 · 2026 1Q Growth Board</span></div>
-    <div class="pno">14</div>
+    <div class="pno">15</div>
   </section>
 
 </div><!-- /deck -->
