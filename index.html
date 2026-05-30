@@ -100,12 +100,14 @@
   .impact .ic-round{margin:0 auto 14px}
   .impact .big{font-size:20px;font-weight:800}
   .impact .lbl{font-size:13.5px;color:var(--ink-dim);font-weight:600;margin-top:8px;line-height:1.5}
-  .impact .metric{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);display:flex;align-items:baseline;justify-content:center;gap:8px}
-  .impact .metric .from{font-size:22px;font-weight:800;color:var(--ink-faint)}
-  .impact .metric .arr{font-size:15px;color:var(--ink-faint)}
-  .impact .metric .to{font-size:34px;font-weight:800;letter-spacing:-.02em}
-  .impact .metric .unit{font-size:13px;font-weight:700;color:var(--ink-dim)}
-  .impact .mlbl{font-size:11.5px;color:var(--ink-faint);margin-top:6px}
+  .impact .use{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:7px}
+  .impact .use .pill{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:800;padding:7px 14px;border-radius:999px;
+    background:var(--b1-soft);color:var(--b1-deep);border:1px solid rgba(59,130,255,0.3)}
+  .impact.b2 .use .pill{background:var(--b2-soft);color:var(--b2-deep);border-color:rgba(34,182,232,0.3)}
+  .impact.b3 .use .pill{background:var(--b3-soft);color:var(--b3-deep);border-color:rgba(124,108,255,0.3)}
+  .impact .use .pill .dot{width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor;animation:liveblink 1.6s infinite}
+  @keyframes liveblink{0%,100%{opacity:1}50%{opacity:.35}}
+  .impact .use .uselbl{font-size:11.5px;color:var(--ink-faint);line-height:1.45}
 
   ul.clean{list-style:none;display:flex;flex-direction:column;gap:11px;margin-top:18px;width:100%;align-items:center;z-index:2}
   ul.clean li{font-size:14px;line-height:1.5;color:var(--ink-dim)}
@@ -303,11 +305,11 @@
 
   <!-- 14 종합 임팩트 -->
   <section class="slide">
-    <div class="qbanner"><div class="qlabel">Total Impact</div><div class="qtxt">박람회 콘텐츠는 완비하고, 발송 체계는 정비하고,<br/>신규 브랜드 자산은 새로 만들었습니다</div></div>
+    <div class="qbanner"><div class="qlabel">Total Impact</div><div class="qtxt">단순히 만든 게 아니라,<br/>영업 현장에서 실제로 쓰이는 자산이 됐습니다</div></div>
     <div class="impactrow">
-      <div class="impact b1"><div class="ic-round">①</div><div class="big">넷폼알앤디</div><div class="lbl">박람회 콘텐츠 완비 → 자산 재활용</div><div class="metric"><span class="from">0</span><span class="arr">→</span><span class="to" style="color:var(--b1-deep)">[N]</span><span class="unit">건</span></div><div class="mlbl">제작·게시한 영상 콘텐츠</div></div>
-      <div class="impact b2"><div class="ic-round">②</div><div class="big">POUR공법</div><div class="lbl">단가표 발송 체계 → 영업 도구화</div><div class="metric"><span class="from">0</span><span class="arr">→</span><span class="to" style="color:var(--b2-deep)">[N]</span><span class="unit">채널</span></div><div class="mlbl">단가표 정기 발송 채널</div></div>
-      <div class="impact b3"><div class="ic-round">③</div><div class="big">아파트스퀘어</div><div class="lbl">신규 브랜드 자산 → 유입 채널 가동</div><div class="metric"><span class="from">0</span><span class="arr">→</span><span class="to" style="color:var(--b3-deep)">[N]</span><span class="unit">채널</span></div><div class="mlbl">신규 가동한 유입 채널</div></div>
+      <div class="impact b1"><div class="ic-round">①</div><div class="big">넷폼알앤디</div><div class="lbl">벡스코 박람회 영상 콘텐츠</div><div class="use"><span class="pill"><span class="dot"></span>영업 활용 중</span><div class="uselbl">상시 영업·홍보 자료로 재활용</div></div></div>
+      <div class="impact b2"><div class="ic-round">②</div><div class="big">POUR공법</div><div class="lbl">단가표 발송 체계 정비</div><div class="use"><span class="pill"><span class="dot"></span>영업 활용 중</span><div class="uselbl">영업이 즉시 발송하는 도구로 정착</div></div></div>
+      <div class="impact b3"><div class="ic-round">③</div><div class="big">아파트스퀘어</div><div class="lbl">신규 브랜드 자산 구축</div><div class="use"><span class="pill"><span class="dot"></span>영업 활용 중</span><div class="uselbl">문의 시 보여줄 레퍼런스로 활용</div></div></div>
     </div>
     <div class="pno">14</div>
   </section>
