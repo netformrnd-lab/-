@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>그로스보드 2026 1Q · 최경선</title>
+<title>2026 1Q · 최경선</title>
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 <style>
   :root{
@@ -43,7 +43,7 @@
     border:1px solid rgba(86,132,255,0.16);
     box-shadow:0 30px 80px -34px rgba(0,40,140,0.7), inset 0 1px 0 rgba(255,255,255,0.05);
     padding:60px 66px;
-    display:flex;flex-direction:column;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
   }
   .slide.center{align-items:center;justify-content:center;text-align:center}
   /* big bottom glow for cover */
@@ -63,12 +63,12 @@
   .eyebrow{font-size:14px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#7fa6ff;margin-bottom:18px;z-index:2}
   h1.title{font-size:52px;font-weight:800;line-height:1.26;letter-spacing:-.025em;z-index:2}
   h2.head{font-size:35px;font-weight:800;line-height:1.34;letter-spacing:-.025em;margin-top:18px;z-index:2}
-  .sub{font-size:17px;color:var(--txt-dim);line-height:1.65;margin-top:16px;max-width:82%;z-index:2}
+  .sub{font-size:17px;color:var(--txt-dim);line-height:1.65;margin-top:16px;max-width:74%;margin-left:auto;margin-right:auto;text-align:center;z-index:2}
   .sub-en{font-size:14px;color:var(--txt-faint);line-height:1.5;margin-top:8px;z-index:2}
   .b1 .accentword{color:#4d86ff} .b2 .accentword{color:#5cc2ff} .b3 .accentword{color:#9aa6ff}
 
   /* ===== glass cards ===== */
-  .grid{display:grid;gap:18px;margin-top:auto;z-index:2}
+  .grid{display:grid;gap:18px;margin-top:auto;width:100%;z-index:2}
   .grid.c2{grid-template-columns:1fr 1fr}
   .grid.c3{grid-template-columns:1fr 1fr 1fr}
   /* 내용이 적은 슬라이드: 제목 아래 적당한 간격, 자연스러운 카드 높이 + 하단 여백 */
@@ -76,6 +76,7 @@
   .card{
     background:var(--glass);border:1px solid var(--gborder);border-radius:18px;
     padding:24px;display:flex;flex-direction:column;gap:10px;backdrop-filter:blur(10px);
+    align-items:center;text-align:center;
     box-shadow:inset 0 1px 0 rgba(255,255,255,0.06);
   }
   .card .k{font-size:12.5px;font-weight:800;letter-spacing:.05em;color:#7fa6ff;text-transform:uppercase}
@@ -112,13 +113,13 @@
   .media-grid.g2{grid-template-columns:1fr 1fr}
 
   /* split layout: text + media */
-  .split{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:28px;z-index:2}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:28px;width:100%;z-index:2}
   .split .col{display:flex;flex-direction:column;gap:16px}
 
   /* lesson box */
-  .lesson{margin-top:16px;border-radius:16px;padding:20px 24px;z-index:2;
+  .lesson{margin-top:16px;border-radius:16px;padding:20px 24px;z-index:2;width:100%;
     border:1px solid rgba(120,160,255,0.25);background:linear-gradient(120deg,rgba(0,89,255,0.12),rgba(8,22,62,0.4));
-    display:flex;gap:16px;align-items:flex-start;backdrop-filter:blur(8px)}
+    display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center;backdrop-filter:blur(8px)}
   .lesson .tag{font-size:12px;font-weight:800;letter-spacing:.06em;padding:6px 12px;border-radius:8px;white-space:nowrap;
     color:#cfe0ff;background:rgba(0,89,255,0.3);border:1px solid rgba(120,160,255,0.5)}
   .lesson .body{font-size:14.5px;line-height:1.62;color:var(--txt-dim)}
@@ -135,9 +136,9 @@
   .chip{padding:9px 18px;border-radius:999px;font-size:15px;color:#cdd9ff;background:rgba(0,89,255,0.16);border:1px solid rgba(120,160,255,0.32);backdrop-filter:blur(6px)}
   .chip b{color:#fff;font-weight:800}
 
-  ul.clean{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:6px;z-index:2}
-  ul.clean li{font-size:14.5px;line-height:1.55;color:var(--txt-dim);padding-left:20px;position:relative}
-  ul.clean li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 10px var(--b1-glow)}
+  ul.clean{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:6px;z-index:2;width:100%;align-items:center}
+  ul.clean li{font-size:14.5px;line-height:1.55;color:var(--txt-dim);position:relative;text-align:center}
+  ul.clean li::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 10px var(--b1-glow);margin-right:9px;vertical-align:middle}
 
   .impactrow{display:flex;gap:18px;margin-top:26px;width:100%;z-index:2}
   .impact{flex:1;background:var(--glass);border:1px solid var(--gborder);border-radius:18px;padding:26px 22px;text-align:center;backdrop-filter:blur(10px)}
@@ -187,8 +188,8 @@
 
   <!-- 1 · TITLE -->
   <section class="slide cover center">
-    <div class="eyebrow">Growth Board · 2026 1Q</div>
-    <h1 class="title">1분기, 세 개의 브랜드에서<br/>만든 변화를 정리했습니다</h1>
+    <div class="eyebrow">2026 1Q</div>
+    <h1 class="title">세 개의 브랜드에서<br/>만든 변화</h1>
     <div class="who">
       <span class="chip">발표자 · <b>최경선</b></span>
       <span class="chip">넷폼알앤디</span>
@@ -476,7 +477,7 @@
     <div class="eyebrow">Thank you</div>
     <h1 class="title">감사합니다</h1>
     <p class="sub" style="max-width:none;text-align:center">목적 · 과정 · 결과 · 배운 점 — 1분기의 기록이었습니다.<br/>질문 환영합니다. <span style="color:#fff;font-weight:800">Q &amp; A</span></p>
-    <div class="who"><span class="chip">최경선 · 2026 1Q Growth Board</span></div>
+    <div class="who"><span class="chip">최경선 · 2026 1Q</span></div>
     <div class="pno">15</div>
   </section>
 
