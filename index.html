@@ -22,6 +22,10 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{height:100%;overflow:hidden;font-family:"Pretendard",sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+  /* 한국어 줄바꿈: 단어 중간에서 끊지 않고, 줄 길이를 자연스럽게 균형 */
+  h1.title,h2.head,.sub,.card .ttl,.card .desc,.lesson .body,.qbanner .qtxt,.bignum .desc,.step .stl,.step .sdesc,.badge,.htag{word-break:keep-all}
+  h1.title,h2.head,.qbanner .qtxt{text-wrap:balance}
+  .sub,.card .desc,.lesson .body,.bignum .desc{text-wrap:pretty}
   body{background:#dde6f6}
   .viewport{position:fixed;inset:0;overflow:hidden}
   .track{display:flex;height:100%;transition:transform .55s cubic-bezier(.7,0,.18,1)}
@@ -310,7 +314,7 @@
           <span class="htag"><b>스티비</b> 발행</span>
           <span class="htag"><span class="n">1</span><b>1편</b></span>
         </div>
-        <div class="card" style="text-align:left;align-items:flex-start;margin-top:10px"><div class="k">채널 전략</div><div class="ttl">채널별 역할 분담</div><div class="desc">카드뉴스는 짧고 시각적인 안내에, 뉴스레터는 깊이 있는 공법 소식·배경 정보 전달에 활용해 채널 역할을 분담했습니다.</div></div>
+        <div class="card" style="text-align:left;align-items:flex-start;margin-top:10px"><div class="k">채널 전략</div><div class="ttl">채널별 역할 분담</div><div class="desc">카드뉴스는 짧고 시각적인 안내에 활용했습니다. 깊이가 필요한 공법 소식·배경 정보는 뉴스레터로 전달해 채널 역할을 분담했습니다.</div></div>
         <div class="lesson" style="margin-top:10px"><span class="tag">개선 방향</span><div class="body">담당자 변경과 무관하게 일관된 품질을 유지하도록 <b>발행 주기·템플릿을 표준화</b>하겠습니다.</div></div>
       </div>
     </div>
